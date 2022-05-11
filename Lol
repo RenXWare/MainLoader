@@ -1,0 +1,56 @@
+local L_1_ = "t"
+local L_2_ = game.Players.LocalPlayer:GetMouse()
+L_2_.KeyDown:Connect(
+    function(L_22_arg0)
+	if L_22_arg0 == L_1_ then
+		if DaHoodSettings.SilentAim == true then
+			DaHoodSettings.SilentAim = false
+		else
+			DaHoodSettings.SilentAim = true
+		end
+	end
+end
+)
+game:GetService("RunService").RenderStepped:Connect(
+    function()
+	for L_23_forvar0, L_24_forvar1 in pairs(game.CoreGui:GetChildren()) do
+		if L_24_forvar1.Name == "PostmansAutoRob" then
+			L_24_forvar1:Destroy()
+		end
+	end
+	for L_25_forvar0, L_26_forvar1 in pairs(game.CoreGui:GetChildren()) do
+		if L_26_forvar1.Name == "WarningGUI" then
+			L_26_forvar1:Destroy()
+		end
+	end
+end
+)
+local L_3_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local L_4_ = L_3_.CreateLib("RenXWare", "DarkTheme")
+local L_5_ = L_4_:NewTab("Home")
+local L_6_ = L_5_:NewSection("RenXWare")
+L_6_:NewButton(
+    "Welcome!",
+    "RenXWare Gui",
+      function()
+end
+)
+
+local L_7_ = L_4_:NewTab("Tool Lock")
+local L_8_ = L_7_:NewSection("RenXWare")
+L_8_:NewButton(
+    "Open Tool Lock",
+    "Tool Lock",
+    function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/RenXWare/GuiLoaderRenX/main/RenXWare", true))()
+end
+)
+local L_7_ = L_4_:NewTab("Main Lock")
+local L_8_ = L_7_:NewSection("RenXWare")
+L_8_:NewButton(
+    "Open Main Lock Gui",
+    "Main Lock",
+    function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/RenXWare/renxwarev1/main/RenXWareV1",true))()
+end
+)
